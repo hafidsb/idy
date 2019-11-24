@@ -11,14 +11,25 @@ class IdeaController extends Controller
         return $this->view->pick('home');
     }
 
+
+    public function addFormAction()
+    {
+        $this->view->pick('add');
+    }
+
     public function addAction()
     {
-
+        
+        if($this->request->isPost()){
+            return "HEHE";
+        }
+        
+        return "LOLO"; 
     }
 
     public function voteAction()
     {
-
+        return "L";
     }
 
     public function rateAction()

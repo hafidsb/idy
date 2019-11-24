@@ -17,6 +17,7 @@ $loader->registerNamespaces(array(
 	 * Load common classes
 	 */
 	'Idy\Common\Events' => APP_PATH . '/common/events',
+	'Idy\Idea' => APP_PATH . '/modules/idea'
 ));
 
 $loader->register();

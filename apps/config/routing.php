@@ -1,5 +1,7 @@
 <?php
 
+use Idy\Idea\IdeaRoutes;
+
 $di['router'] = function() use ($defaultModule, $modules, $di, $config) {
 
 	$router = new \Phalcon\Mvc\Router(false);
@@ -104,6 +106,7 @@ $di['router'] = function() use ($defaultModule, $modules, $di, $config) {
 		}
 	}
 	
+	$router->mount(new IdeaRoutes());
     $router->removeExtraSlashes(true);
     
 	return $router;
