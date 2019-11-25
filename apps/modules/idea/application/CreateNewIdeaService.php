@@ -37,7 +37,7 @@ class CreateNewIdeaService
             $author
         );
 
-        $this->ideaRepository->save($idea);
+        return $this->ideaRepository->save($idea);
     }
 
 }

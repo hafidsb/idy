@@ -15,6 +15,11 @@ class IdeaController extends Controller
      */
     private $createNewIdeaService;
 
+    /**
+     * @var ViewAllIdeaService
+     */
+    private $viewAllIdeasService;
+
     private $ideaTitleRequestKey = 'title';
     private $ideaDescriptionRequestKey = 'description';
     private $authorNameRequestKey = 'name';
@@ -31,6 +36,7 @@ class IdeaController extends Controller
 
     public function indexAction()
     {
+
         return $this->view->pick('home');
     }
 

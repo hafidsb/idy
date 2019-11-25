@@ -35,6 +35,18 @@ class SqlIdeaRepository implements IdeaRepository
         );
     }
 
+    public function buildIdeas($sql, array $parameters = [])
+    {
+        $st = $this->pdo->prepare($sql);
+
+        $st->execute($parameters);
+
+        return array_map(function ($row) {
+            return $this->buildIdea($row);
+
+        }, $st->fetchAll(\PDO::FETCH_ASSOC));
+    }
+
     private function insert(Idea $idea)
     {
         $sql = 'INSERT INTO ideas (id, title, description, author, ratings, votes)
@@ -85,7 +97,9 @@ class SqlIdeaRepository implements IdeaRepository
 
     public function allIdeas()
     {
+        $sql = "SELECT * FROM ideas";
 
+        return $this->viewAll($sql,[]);
     }
     
 }
