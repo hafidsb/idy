@@ -25,11 +25,18 @@
     <h2>HTML Forms</h2>
 
     <form method="POST" action="{{ url('idea/add') }}">
-        First name:<br>
-        <input type="text" name="firstname" value="Mickey">
+        Idea Title:<br>
+        <input type="text" name="title">
         <br>
-        Last name:<br>
-        <input type="text" name="lastname" value="Mouse">
+        Description:<br>
+        <input type="textarea" name="description">
+        <br>
+        Author Name:<br>
+        <input type="text" name="name">
+        <br>
+        Author Email:<br>
+        <input type="text" name="email">
+        <br>
         <br><br>
         <input type="submit" value="Submit">
     </form> 
